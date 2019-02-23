@@ -1,0 +1,43 @@
+<div class="base" (click)="pointerAnimation($event)">
+   <div class="input-container">
+     <div type="text" class="base__input">${{clickedButton}}</div>
+   </div>
+   <div class="button-container">
+     <app-button [number]='number' (clickedNumber)="clickedNumber($event)"></app-button>
+   </div>
+   <div class="container-withdraw">
+     <button class="container-withdraw__btn" (click)="open(add)">withdraw</button>
+   </div>
+</div>
+
+<ng-template #add let-modal>
+  <div *ngIf="withdrawBoolean === true">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Success</h4>
+    </div>
+    <div class="modal-body">
+      <h5 class="modal-success-message">Please take your cash</h5>
+      <h4 *ngFor="let note of withdrawMoney"><div class="img-container"></div><span>${{note.banknoteValue}}x{{note.quantity}}</span></h4>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="close modal-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="withdrawBoolean === false">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Error</h4>
+    </div>
+    <div class="modal-body">
+      <h5>{{withhdrawError}}</h5>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="close modal-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        Close
+      </button>
+    </div>
+  </div>
+
+</ng-template>
