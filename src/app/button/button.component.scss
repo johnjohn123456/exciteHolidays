@@ -3,11 +3,13 @@ button {
   background-color: #f7f8fa;
   border-radius: 50%;
   padding: 1.3rem;
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   margin-bottom: 20px;
   margin-right: 20px;
   outline: none !important;
+  text-align: center;
+  line-height: 18px;
 
   &:nth-child(3) {
     page-break-after: always;
