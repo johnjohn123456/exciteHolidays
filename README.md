@@ -1,6 +1,6 @@
 # ATM
 
-T  his project is a simulation of atm machine.
+  This project is a simulation of atm machine.
 
 ## Information about the stack
 
